@@ -1,6 +1,5 @@
 # 🌿 GMKGD: Gut Microbiome Knowledge Graph Database
 
-![Logo](https://your-logo-link-if-any.png)
 
 > **GMKGD** is an interactive, searchable, and expandable knowledge graph database designed to map the complex relationships between **gut microbes**, **metabolites**, **molecular targets**, **human diseases**, and **food sources**.
 
