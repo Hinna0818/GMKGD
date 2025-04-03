@@ -1,0 +1,9 @@
+streamlit==1.31.1
+sqlalchemy==2.0.27
+pymysql==1.1.0
+pandas==2.2.1
+matplotlib==3.8.3
+altair==5.2.0
+networkx==3.2.1
+pyvis==0.3.2
+gseapy==1.1.2
