@@ -4,71 +4,75 @@ use gutdb;
 
 -- 建表
 CREATE TABLE Microbes (
-    microbe_id VARCHAR(10) PRIMARY KEY,
+    Microbe_id VARCHAR(10) PRIMARY KEY,
     GM_name VARCHAR(255) NOT NULL,
     NCBI_ID VARCHAR(50),
     GM_Rank VARCHAR(255),
-    strain VARCHAR(255)
+    Strain VARCHAR(255)
 );
 
 CREATE TABLE Metabolites (
-    metabolite_id VARCHAR(10) PRIMARY KEY,
-    metabolite_name VARCHAR(255) NOT NULL,
-    chemical_formula VARCHAR(100),
-    smiles TEXT,
-    inchi TEXT
+    Metabolite_id VARCHAR(10) PRIMARY KEY,
+    Metabolite_name VARCHAR(255) NOT NULL,
+    PubChem_ID VARCHAR(20),
+    ChEBI_ID VARCHAR(20),
+    HMDB_ID  VARCHAR(20)
 );
 
 CREATE TABLE Targets (
     Gene_id VARCHAR(10) PRIMARY KEY,
     Gene_name VARCHAR(255) NOT NULL,
-    gene_symbol VARCHAR(50),
-    uniprot_id VARCHAR(50)
+    Gene_symbol VARCHAR(50),
+    NCBI_geneID VARCHAR(50)
 );
 
 CREATE TABLE Diseases (
-    disease_id VARCHAR(10) PRIMARY KEY,
-    disease_name VARCHAR(255) NOT NULL,
-    doid VARCHAR(50),
-    description TEXT
+    Disease_id VARCHAR(10) PRIMARY KEY,
+    Disease_name VARCHAR(255) NOT NULL,
+    DOID VARCHAR(50),
+    Description TEXT
 );
 
 CREATE TABLE FoodSources (
-    food_id VARCHAR(10) PRIMARY KEY,
-    food_name VARCHAR(255) NOT NULL,
-    category VARCHAR(100),
-    nutrient_content TEXT
+    Food_id VARCHAR(10) PRIMARY KEY,
+    Food_name VARCHAR(255) NOT NULL,
+    Category VARCHAR(100),
+    Nutrient_content TEXT
 );
 
 CREATE TABLE Microbe_Metabolite (
-    microbe_id VARCHAR(10),
-    metabolite_id VARCHAR(10),
-    PRIMARY KEY (microbe_id, metabolite_id),
-    FOREIGN KEY (microbe_id) REFERENCES Microbes(microbe_id),
-    FOREIGN KEY (metabolite_id) REFERENCES Metabolites(metabolite_id)
+    Microbe_id VARCHAR(10),
+    Metabolite_id VARCHAR(10),
+    PMID VARCHAR(20),
+    PRIMARY KEY (Microbe_id, Metabolite_id, PMID),
+    FOREIGN KEY (Microbe_id) REFERENCES Microbes(Microbe_id),
+    FOREIGN KEY (Metabolite_id) REFERENCES Metabolites(Metabolite_id)
 );
 
 CREATE TABLE Metabolite_Food (
-    metabolite_id VARCHAR(10),
-    food_id VARCHAR(10),
-    PRIMARY KEY (food_id, metabolite_id),
-    FOREIGN KEY (food_id) REFERENCES FoodSources(food_id),
-    FOREIGN KEY (metabolite_id) REFERENCES Metabolites(metabolite_id)
+    Metabolite_id VARCHAR(10),
+    Food_id VARCHAR(10),
+    PRIMARY KEY (Food_id, Metabolite_id),
+    FOREIGN KEY (Food_id) REFERENCES FoodSources(Food_id),
+    FOREIGN KEY (Metabolite_id) REFERENCES Metabolites(Metabolite_id)
 );
 
 CREATE TABLE Metabolite_Target (
-    metabolite_id VARCHAR(10),
+    Metabolite_id VARCHAR(10),
     Gene_id VARCHAR(10),
-    PRIMARY KEY (metabolite_id, Gene_id),
-    FOREIGN KEY (metabolite_id) REFERENCES Metabolites(metabolite_id),
+    Alteration VARCHAR(20),
+    PMID VARCHAR(20),
+    PRIMARY KEY (Metabolite_id, Gene_id, PMID),
+    FOREIGN KEY (Metabolite_id) REFERENCES Metabolites(Metabolite_id),
     FOREIGN KEY (Gene_id) REFERENCES Targets(Gene_id)
 );
 
 
-CREATE TABLE Metabolite_Disease (
-    metabolite_id VARCHAR(10),
-    disease_id VARCHAR(10),
-    PRIMARY KEY (metabolite_id, disease_id),
-    FOREIGN KEY (metabolite_id) REFERENCES Metabolites(Gene_id),
-    FOREIGN KEY (disease_id) REFERENCES Diseases(disease_id)
+CREATE TABLE Gene_Disease (
+    Gene_id VARCHAR(10),
+    Disease_id VARCHAR(10),
+    PMID VARCHAR(20),
+    PRIMARY KEY (Gene_id, Disease_id, PMID),
+    FOREIGN KEY (Gene_id) REFERENCES Targets(Gene_id),
+    FOREIGN KEY (Disease_id) REFERENCES Diseases(Disease_id)
 );
