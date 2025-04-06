@@ -38,7 +38,7 @@ This version introduces a **local and interactive web-based platform**, allowing
 
 ---
 
-## 🚧 Limitations (v1.0)
+## 🚧 Limitations (v1.0 & V1.0.1)
 
 - Database runs **locally only**
 - Food-microbe interactions are limited and manually annotated
