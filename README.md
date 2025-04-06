@@ -42,8 +42,15 @@ It supports **keyword-based search**, **interactive network visualization**, and
 ```bash
 pip install -r requirements.txt
 ```
+### 📥 Step 1. Download files
+Download **./SQL/gutdb/sql** for initializing database
 
-### 🚀 Launch the Application
+### 🧰 Step 2. Add database into your computer
+```bash
+mysql -u root -p < gutdb.sql
+```
+
+### 🚀 Step 3. Launch the Application
 Navigate to the project directory where **main.py** is located, and run the Streamlit application:
 ```bash
 streamlit run GMKGD/main.py
@@ -54,7 +61,7 @@ By default, it will open at: http://localhost:8501
 ```{graphql}
 GMKGD/
 │
-├── GMKGD/                  # Main app source code
+├── Python/                  # Main app source code
 │   ├── main.py            # Entry point of the application
 │   ├── init.py            # Database connection initialization
 │   ├── query.py           # Query engine and SQL logic
@@ -64,6 +71,8 @@ GMKGD/
 │   ├── dashboard.py       # Homepage and dashboard logic
 │   └── config.py          # Color palette and settings
 │
+├── SQL/               
+│   └── gutdb.sql
 ├── requirements.txt       # Python dependency list
 ├── README.md              # Project documentation
 ├── .gitignore             # Git ignore rules
