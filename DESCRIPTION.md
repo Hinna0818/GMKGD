@@ -1,8 +1,9 @@
-# 📘 GMKGD - Description (v1.0)
+# 📘 GMKGD - Description (v1.0.1)
 
 ## Project: GMKGD (Gut Microbiome Knowledge Graph Database)
 
 ### Version: 1.0 (Initial Release)
+####  Version: 1.0.1 (2025.4.6 Release)
 
 ---
 
@@ -64,6 +65,11 @@ This version introduces a **local and interactive web-based platform**, allowing
   - Focus on manually curated knowledge
   - Basic search & visualization modules completed
   - Enrichment analysis (KEGG + GO) integrated
+
+- **v1.0.1** (2025.4.6): Supplementary version of GMKGD1.0.
+  - Add Sankey-plot for microbe-metabolites-targets visualization
+  - Fix bugs
+  - Support Key words query
 
 ---
 
