@@ -51,6 +51,7 @@ streamlit run GMKGD/main.py
 By default, it will open at: http://localhost:8501
 
 ### 🗂 Project Structure
+```{graphql}
 GMKGD/
 │
 ├── GMKGD/                  # Main app source code
@@ -66,6 +67,7 @@ GMKGD/
 ├── requirements.txt       # Python dependency list
 ├── README.md              # Project documentation
 ├── .gitignore             # Git ignore rules
+```
 
 ### ⚙️ Database Configuration
 Ensure your MySQL server is running and the database gutdb is created with the correct schema. Update the MySQL connection in **config.py**:
