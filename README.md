@@ -32,16 +32,42 @@ It supports **keyword-based search**, **interactive network visualization**, and
 ---
 
 ## 🚀 Quick Start
-
 ### 💻 Prerequisites
-
+#### Required tools
 - Python ≥ 3.8
 - MySQL ≥ 8.0
 - Streamlit ≥ 1.20
-- Required packages:
+
+#### Required packages:
+- streamlit>=1.25
+- pandas>=1.5
+- sqlalchemy>=2.0
+- pymysql>=1.0
+- networkx>=2.8
+- pyvis>=0.3.2
+- altair>=4.2
+- matplotlib>=3.5
+- gseapy>=1.0
+- plotly>=5.10
+
+### 📦 Requirements
+We recommend using conda to manage your Python environment to ensure compatibility and avoid dependency issues.
 ```bash
+# Step 1: Create a new conda environment
+conda create -n gmkgd_env python=3.9
+
+# Step 2: Activate the environment
+conda activate gmkgd_env
+
+# Step 3: Install required packages
 pip install -r requirements.txt
 ```
+
+Alternatively, if you are using venv or virtualenv, make sure you install the dependencies using:
+```{bash}
+pip install -r requirements.txt
+```
+
 ### 📥 Step 1. Download files
 Download **./SQL/gutdb/sql** for initializing database
 
