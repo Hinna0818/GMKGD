@@ -26,7 +26,7 @@ It supports **keyword-based search**, **interactive network visualization**, and
 | 🔍 **Keyword Search**         | Multi-entity fuzzy search (e.g. "Bifidobacterium") |
 | 🕸️ **Knowledge Graph**        | Interactive network built with PyVis + NetworkX |
 | 📈 **Enrichment Analysis**    | Built-in KEGG & GO-BP enrichment via [GSEApy](https://github.com/zqfang/GSEApy) |
-| 📊 **Statistics Dashboard**   | Distribution & Top5 rankings (e.g. most common microbes, diseases) |
+| 📊 **Statistics Dashboard**   | Distribution of microbes' rank |
 | 💾 **Downloadable Results**  | CSV exports + Graph image export |
 
 ---
@@ -41,3 +41,38 @@ It supports **keyword-based search**, **interactive network visualization**, and
 - Required packages:
 ```bash
 pip install -r requirements.txt
+```
+
+### 🚀 Launch the Application
+Navigate to the project directory where **main.py** is located, and run the Streamlit application:
+```bash
+streamlit run GMKGD/main.py
+```
+By default, it will open at: http://localhost:8501
+
+### 🗂 Project Structure
+GMKGD/
+│
+├── GMKGD/                  # Main app source code
+│   ├── main.py            # Entry point of the application
+│   ├── init.py            # Database connection initialization
+│   ├── query.py           # Query engine and SQL logic
+│   ├── enrichment.py      # KEGG and GO enrichment module
+│   ├── network_viz.py     # Interactive network visualization
+│   ├── sankey_plot.py     # Sankey diagram visualization
+│   ├── dashboard.py       # Homepage and dashboard logic
+│   └── config.py          # Color palette and settings
+│
+├── requirements.txt       # Python dependency list
+├── README.md              # Project documentation
+├── .gitignore             # Git ignore rules
+
+### ⚙️ Database Configuration
+Ensure your MySQL server is running and the database gutdb is created with the correct schema. Update the MySQL connection in **config.py**:
+```{python}
+engine = create_engine("mysql+pymysql://<username>:<password>@localhost:3306/gutdb?charset=utf8mb4")
+```
+
+
+
+
