@@ -73,6 +73,7 @@ GMKGD/
 Ensure your MySQL server is running and the database gutdb is created with the correct schema. Update the MySQL connection in **config.py**:
 ```{python}
 engine = create_engine("mysql+pymysql://<username>:<password>@localhost:3306/gutdb?charset=utf8mb4")
+## example: engine = create_engine("mysql+pymysql://hinna:hinna12345@localhost:3306/gutdb?charset=utf8mb4")
 ```
 
 
