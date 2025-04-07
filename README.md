@@ -101,6 +101,7 @@ GMKGD/
 │   └── gutdb.sql
 ├── requirements.txt       # Python dependency list
 ├── README.md              # Project documentation
+├── DESCRIPTION.md         # database description and version update news
 ├── .gitignore             # Git ignore rules
 ```
 
