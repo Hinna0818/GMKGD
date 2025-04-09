@@ -114,6 +114,16 @@ engine = create_engine("mysql+pymysql://<username>:<password>@localhost:3306/gut
 # engine = create_engine("mysql+pymysql://hinna:hinna12345@localhost:3306/gutdb?charset=utf8mb4")
 ```
 
+### Demo
+We decided using <mark>microbe--"Bifidobacterium" as a demo for quick start:
+![image](https://github.com/user-attachments/assets/8e2f0e4d-439c-4ee2-8820-c1807dbe6be6)
+![image](https://github.com/user-attachments/assets/6790cf0e-3856-488a-8916-8726b484c5ef)
+![image](https://github.com/user-attachments/assets/a21ad947-5de0-4dd8-9818-b01740356fd1)
+![image](https://github.com/user-attachments/assets/8fd23066-55a7-4145-8b3d-8980ca5de1fa)
+
+
+
+
 
 
 
